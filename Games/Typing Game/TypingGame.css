@@ -1,0 +1,114 @@
+html {
+	text-align: center;
+	background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, purple);
+	font-family: sans-serif;
+	-ms-user-select: none;
+	user-select: none;
+}
+#gameFrame {
+	height: 9cm;
+	width: 30cm;
+	background-color: orange;
+	margin: auto auto 0 auto;
+	text-align: center;
+	font: 9cm serif;
+	padding-bottom: 0.5cm;
+	cursor: pointer;
+	font-family: inherit;
+}
+h1 {
+	font-family: fantasy;
+	margin-bottom: 0;
+	text-shadow: 5px 5px grey;
+}
+#timer {
+	height: 4cm;
+	width: 30cm;
+	background-color: lightGreen;
+	margin: 0 auto;
+	text-align: center;
+	transition: color 1s;
+	font-family: inherit;
+	font: 3.5cm sans-serif;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+}
+input {
+	background-color: rgba(0,0,0,0);
+	color: rgba(0,0,0,0);
+	border-width: 0;
+}
+#sco, #hsco {
+	height: 1.5cm;
+	width: 30cm;
+	color: red;
+	font-size: 1cm;
+	margin: 0 auto;
+}
+#sco {
+	background-color: lightBlue;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
+}
+#hsco {
+	background-color: pink;
+}
+#blinds {
+	background-color: rgba(0,0,0,0.85);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	text-align: center;
+}
+#instructions {
+	padding: 10px;
+	background-color: lightGreen;
+	position: fixed;
+	top: 4cm;
+	color: blue;
+	postion: static;
+	bottom: 6cm;
+	left: 6cm;
+	height: 9cm;
+	right: 6cm;
+	border-radius: 9px;
+	font-size: 0.75cm;
+	border: blue 4px double;
+}
+button {
+	border: 2px solid red;
+	color: red;
+	border-radius: 5px;
+	width: 7cm;
+	font-size: 0.8cm;
+	padding: 0;
+	font-family: impact;
+	height: 3cm;
+	background-color: orange;
+	transition: width 0.2s ease-in, color 0.2s, background-color 0.1s ease-out 0.1s, border-color 0.2s, border-width 0.2s ease-in 0.1s;
+	cursor: pointer;
+}
+button:hover {
+	width: 10cm;
+	background-color: red;
+	border-width: 5px;
+	border-color: orange;
+	color: orange;
+}
+#instructions img {
+	height: 100px;
+	margin-top: 10px;
+	border-radius: 4px;
+}
+#background {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -4;
+	height: 100%;
+	width: 100%;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="stopwatch.css">
+<link href='https://fonts.googleapis.com/css?family=Nova+Mono|Share' rel='stylesheet' type='text/css'>
+<style>
+html {
+	font-family: "Share"
+}
+.number {
+	font-family: "Nova Mono";
+	color: purple;
+}
+</style>
+<title>Alarm Clock</title>
+<header>
+<nav>
+<a href="time.html">Clock</a>
+<a href="countdown.html">Countdown Timer</a>
+<a href="alarmclock.html">Alarm Clock</a>
+</nav>
+</header>
+<h1 class="title">Alarm Clock Selected!</h1>
+<p class="text">Current Time:</p>
+<p class="number text" id="ctime"></p>
+<br>
+<p class="text">Alarm Settings<br><b>Note:</b> if the minutes or seconds are one-digit, plaese place a "0" before it.</p><br>
+<figure class="text">
+<input type="text" placeholder="Hours" id="h"> :
+<input type="text" placeholder="Minutes" id="m"> :
+<input type="text" placeholder="Seconds" id="s"><br>
+What page to open on alarm: <input type="text" placeholder="Paste URL" id="url">
+
+</figure>
+<script>
+setInterval(function() {
+	var sec = document.getElementById("s").value;
+	var min = document.getElementById("m").value;
+	var hrs = document.getElementById("h").value;
+	if (hrs >= 13) {
+		hrs = Number(hrs) - 12
+	}
+	var alarm = hrs + ":" + min + ":" + sec;
+	var d = new Date();
+	var url = document.getElementById("url").value;
+	var cs = d.getSeconds();
+	if (cs <= 9) {
+		cs = "0" + cs
+	}
+	var cm = d.getMinutes();
+	if (cm <= 9) {
+		cm = "0" + cm
+	}
+	var ch = d.getHours();
+	if (ch >= 13) {
+		ch = ch - 12
+	}
+	var ctime = ch + ":" + cm + ":" + cs;
+	if (String(alarm) == String(ctime)) {
+		 window.location.assign(url)
+	}
+	document.getElementById("ctime").innerHTML = ctime
+},1000)
+</script> 
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<title>Probability Simulator!</title>
+<link href='https://fonts.googleapis.com/css?family=Freckle+Face|Chelsea+Market' rel='stylesheet' type='text/css'>
+<style>
+html {
+	color: #8B7D6B;
+	background-color: #FFEECA;
+	font: normal 1cm 'Freckle Face', impact;
+	text-shadow: 4px 4px #EED5B7;
+	margin-left: 5cm;
+}
+h1 {
+	color: #DAA520;
+	font-family: 'Chelsea Market', monospace;
+}
+a {
+	font-size: 2cm;
+}
+a:hover {
+	border-color: #8B6914;
+	border-style: dashed;
+	border-width: 6px;
+	color: #FFD700;
+}
+</style>
+<h1>Marble Bag Selected!</h1>
+<p>Amount of blue marbles:</p>
+<input type="text" step="1" maxlength="3" id="Blue" placeholder="Blue Marbles" min="0" name="f">
+<p>Amount of red marbles:</p>
+<input type="text" step="1" id="Red" min="0" maxlength="3" placeholder="Red Marbles" name="r">
+<p>Amount of green marbles:</p>
+<input type="text" step="1" id="Green" min="0" maxlength="3" placeholder="Green Marbles" name="e">
+<p>Amount of yellow marbles:</p>
+<input type="text" step="1" min="0" maxlength="3" id="Yellow" placeholder="Yellow Marbles" name="g">
+<button onclick="Pick()">CHOOSE!</button>
+<p>Total Marbles:</p><p id="total">TBA</p>
+<p>Result: </p><p id="Result">TBA</p>
+<script>
+function Pick() {
+	var b = Number(document.getElementById("Blue").value);
+	var r = Number(document.getElementById("Red").value);
+	var g = Number(document.getElementById("Green").value);
+	var y = Number(document.getElementById("Yellow").value);
+	if (b >= 0 &&
+		y >= 0 &&
+		r >= 0 &&
+		g >= 0) {
+			var total = b + r + g + y;
+			document.getElementById("total").innerHTML = total;
+			var random = Math.floor(Math.random() * total + 1);
+			if (random <= b) {
+			var results = "Blue";
+			}
+			if (random > b &&
+				random <= b + r) {
+				var results = "Red";
+			}
+			if (random > r + b &&
+				random <= b + r + y) {
+				var results = "Yellow";
+			}
+			if (random > y + b + r &&
+				random <= b + r + y + g) {
+					var results = "Green"
+			}
+			document.getElementById("Result").innerHTML = results;
+		}
+	
+	if (b < 0 ||
+		y < 0 ||
+		r < 0 ||
+		g < 0 ) {
+			document.getElementById("Result").innerHTML = "ERROR!";
+			document.getElementById("total").innerHTML = "Invalid Input!";
+		}
+}
+</script>

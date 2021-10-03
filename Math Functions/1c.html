@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>Done!</title>
+<link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Indie+Flower' rel='stylesheet' type='text/css'>
+<style>
+html, h1 {
+	color: #607B8B;
+	background-color: #FFAEB9;
+	font-family: 'Permanent Marker', fantasy; 
+	font-size: 2cm;
+	text-shadow: 8px 8px 8px #00FA9A;
+	margin-left: 5cm
+	}
+	</style>
+	<body>
+	<script>
+	var $ = prompt('Name a historical event that happened before you were born.', 'Write Here.')
+	var event = prompt('What year did it occur?', 'e.g. 2007')
+	var away = prompt('How far is this date, ' + event + ', from your birth year?', 'Write a number only')
+	var year = prompt('What year is it right now?', 'What year?')
+	var age = year - event - away
+	alert('You are ' + (age - 1) + '-' + age + ' years old.') 
+	</script>
+	<h1>Done! Go Back</h1>
+	</body>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<title>Done Advanced Edition!</title>
+<style>
+html {
+	color: blue;
+	background-color: lightGreen;
+	margin-left: 5cm;
+	font: bold 1cm monospace;
+}
+h1 {
+	color: magenta;
+	text-shadow: 4px 4px blue;
+	font-family: impact;
+	font-style: underline;
+}
+a:hover {
+	border-width: 0.75cm;
+	border-style: dashed;
+	border-color: magenta;
+	font-family: fantasy;
+	font-size: 3cm;
+	font-style: underline;
+	color: hotPink
+}
+</style>
+<script>
+var name = prompt('What is your name?', 'Do you have a name?')
+alert('Ask the owner, Faraz, for the password, ' + name + '.')
+var password = prompt('What is the password, ' + name + '?', 'ENTER')
+if (password == 'Ello') {
+	alert('We only need to ask 4 questions, ' + name + '.')
+	var T_overs = prompt('How many overs are in the match, ' + name + '?', 'NUMBERS ONLY')
+	if (T_overs > 0) {
+	var overs_done = prompt('How many overs have been completed?', 'NO DECIMAL')
+	var min_overs = T_overs / 2
+	if (overs_done > T_overs) {
+		alert('ERROR! 3')
+		alert('Invalid input!')
+	}
+	else if (overs_done >= min_overs) {
+		var balls_done = prompt(overs_done + ' overs and how many balls, ' + name + '?', 'NUMBERS ONLY')
+		if (balls_done > 6) {
+			alert('ERROR! 2')
+			alert('Invalid input!')
+		}
+		if (balls_done < 0) {
+			alert('ERROR! 1')
+			alert('Invalid input!')
+		}
+		else if (balls_done <= 5) {
+		alert('Last Question, ' + name + '.')
+		var runs_done = prompt('How many runs has the team scored at ' + overs_done + ' overs and ' + balls_done + ' balls?', 'NUMBERS ONLY')
+		if (runs_done >= 0) {
+		var overs_done_base10 = (overs_done + (balls_done / 6)) / 10
+		var run_rate = runs_done / overs_done_base10
+		var predicted_runs = T_overs * run_rate
+		alert('BUUUUUUZZZZZ')
+		alert('zzzzaaaaaappp!')
+		alert('rrrrrrrr... bing!')
+		alert('Prediction successful! \nAnswer found!')
+		var range = prompt('What do you want your prediction range to be? \nIf you want it to be exact type in "exact".', 'CASE SENSITIVE')
+		var RP_runs = Math.round(predicted_runs)
+		if (range == 'exact') {
+			alert('Exact answer found!')
+			alert('Final score...')
+			alert(RP_runs + ' runs!')
+			alert('YAY!')
+		}
+		if (range != 'exact') {
+			var range_dif = range / 2
+			alert('Your predicted score, with the range of ' + range + ' is...')
+			alert((RP_runs - range_dif) + '-' + (RP_runs + range_dif) + ' runs.')
+			alert('YAY!')
+		}
+		}
+		if (runs_done < 0) {
+			alert('ERROR! 1')
+			alert('Invalid input!')
+		}
+		}
+}
+	else if (overs_done < min_overs) {
+	alert('NOT ENOUGH OVERS HAVE BEEN COMPLETED FOR ACCURATE RESULTS!')
+}
+	if (overs_done < 0) {
+		alert('ERROR 1!')
+		alert('Invalid input!')
+	}
+}
+if (T_overs <= 0) {
+	alert('ERROR 1!')
+	alert('Invalid input!')
+}
+}
+if (password != 'Ello') {
+	alert('ACESS DENIED!')
+}
+</script>
+<h1>If you paid...</h1><br>
+<p>Thanks for your money!<br> This is a very accurate tool, and we hope you don't fail!</p><br>
+<h1>If you didn't pay...</h1><br>
+<p>You are a fail and you can't afford anything.</p><br><br>

@@ -1,0 +1,23 @@
+const loadingScreen = document.querySelector(".loadingScreen");
+const loadingFrame = document.querySelector(".loadingFrame");
+
+function cancelLoadingScreen() {
+	try {
+		game.reset();
+	} catch (err) {
+		console.log(err);
+		loadingFrame.innerHTML = "<p>An Error occured</p>";
+		var e = true;
+	}
+	if (!e) {
+		animate.fadeout(loadingScreen, 1);
+	}
+}
+
+function loadingFinished() {
+	loadingFrame.innerHTML = "<p>Click to Play!</p>";
+	loadingScreen.onclick = function() {
+		cancelLoadingScreen();
+	}
+}
+	

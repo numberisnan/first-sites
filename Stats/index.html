@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="UTF-8">
+	<title>Math Shortcuts</title>
+	<link rel="stylesheet" href="Stats.css">
+	<script src="Stats.js"></script>
+</head>
+<body>
+	<div class="designLine" id="lineCover">
+	<div id="topL" class="designLine"></div>
+	<img src="Images/logo.png" id="logo"></div>
+	<p id="countDisplay"></p>
+	<div id="smiley" onmouseover="EndLoop()">. .<br />
+	U
+	</div>
+	
+	<h1>Helpful Math Functions and Conversions</h1>
+	<h2>2-Point Line Stats</h2>
+	<p class="subnote">I can tell you things about these 2 points</p>
+	<p>Point A:</p> ( <input id="x1" type="text"> , <input id="y1" type="text"> ) <br>
+	<p>Point B:</p> ( <input id="x2" type="text"> , <input id="y2" type="text"> ) <br><br>
+	<button onclick="Solve()" class="solver">SOLVE</button>
+	<button onclick="Clear(1)">CLEAR</button>
+	<div id="linearO" class="output">
+		<p id="Standard"></p>
+		<p id="SlopeInt"></p>
+		<p id="SlopePoint"></p>
+		<p id="dis"></p>
+		<p id="mid"></p>
+		<p id="polar1"></p>
+		<p id="polar2"></p>
+	</div>
+
+	<h2>Quadratic Solution</h2>
+	<p class="subnote">Use me to obtain solutions to a quadratic and more</p>
+	<input id="a" type="text">X<sup>2</sup> + <input id="b" type="text">X + <input id="c" type="text"> = 0<br><br>
+	<button onclick="Quad()" class="solver">SOLVE</button>
+	<button onclick="Clear(2)">CLEAR</button>
+
+	<div id="answerContainer" class="output">
+		<p id="Sym"></p>
+		<p id="Minmax"></p>
+		<p id="Vertex"></p>
+		<p id="Solution"></p>
+		<p id="VForm"></p>
+		<p id="FForm"></p>
+	</div>
+
+	<h2>Triangle Stats</h2>
+	<p class="subnote">I can tell you things about these 3 points</p>
+	<p>Point A:</p> ( <input id="xx1" type="text"> , <input id="yy1" type="text"> ) <br>
+	<p>Point B:</p> ( <input id="xx2" type="text"> , <input id="yy2" type="text"> ) <br>
+	<p>Point C:</p> ( <input id="xx3" type="text"> , <input id="yy3" type="text"> ) <br><br>
+	<button onclick="Triangle()" class="solver">SOLVE</button>
+	<button onclick="Clear(3)">CLEAR</button>
+
+	<div id="triangleO" class="output">
+		<p id="area"></p>
+		<p id="perimeter"></p>
+		<p id="centroid"></p>
+		<p id="circumcenter"></p>
+	</div>
+
+	<h2>Line Intercept Solver</h2>
+	<p class="subnote">Use this to solve linear equations, just write them down <br>Use lowercase y and x for variables, * for multiplication, == for equals</p>
+	<p>Equation A:</p><input id="equationA" type="text" class="wideInput"><br>
+	<p>Equation B:</p><input id="equationB" type="text" class="wideInput"><br><br>
+	<button onclick="Intercept()" class="solver">SOLVE</button>
+	<button onclick="Clear(4)">CLEAR</button>
+
+	<div id="equationO" class="output">
+		<p id="point"></p>
+	</div>
+</body>
+<footer>
+	<script>
+		for (var i = 0; i < document.getElementsByClassName("solver").length; i++) {
+			document.getElementsByClassName("solver")[i].addEventListener("click",function(){
+				addToCounter(1)
+				}
+			);
+		}
+		addToCounter(0);
+	</script>
+	<script src="paint.js"></script>
+</footer>

@@ -1,0 +1,25 @@
+<!doctype html>
+<body id="body">
+<script>
+	var s = [];
+	var n = Number(prompt("Start Value", "Enter"));	s.push(n);
+	calc();
+	
+	function calc() {
+		if (n == 1) {
+			console.log(s);
+			return;
+		} else if (n % 2 == 0) {
+			//Even
+			n /= 2;
+			s.push(n);
+		} else {
+			//Odd
+			n *= 3;
+			n += 1;
+			s.push(n);
+		}
+		calc();
+	}
+</script>
+</body>

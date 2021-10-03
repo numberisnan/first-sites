@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MAD finder</title>
+</head>
+<body>
+<button onclick="Main()">Find Mad</button>
+<script>
+function Main() {
+alert("Please enter a piece of data and press enter. Once all data is entered, click cancel or type 'done'.")
+var ans = 0;
+var iteration = 0;
+var totalData = [];
+
+while (ans != null) {
+	var ans = prompt("Enter piece of data.", "ENTER");
+	totalData.push(ans);
+	if (ans == "done" || isNaN(ans) == true) {
+		break;
+	}
+	iteration++;
+}
+
+totalData.splice(-1, 1);
+iteration--;
+var sum = 0;
+
+for (var i = 0; i <= iteration; i++) {
+	sum += Number(totalData[i]);
+	}
+	
+var mean = sum / i;
+var dif = totalData;
+
+for (var j = 0; j <= iteration; j++) {
+	dif[j] = Math.abs(dif[j] - mean);
+}
+
+var mad_pre = 0;
+
+for (var k = 0; k <= iteration; k++) {
+	mad_pre += Number(dif[k]);
+}
+
+var mad = mad_pre / k;
+alert("MAD: " + mad + "\nMEAN: " + mean + "\nNUMBER OF ELEMENTS: " + totalData.length)
+}
+</script>
+</body>
+</html>

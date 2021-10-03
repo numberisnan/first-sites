@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>Done!</title>
+<link href='https://fonts.googleapis.com/css?family=Permanent+Marker|Indie+Flower' rel='stylesheet' type='text/css'>
+<style>
+html, h1 {
+	color: #607B8B;
+	background-color: #FFAEB9;
+	font-family: 'Permanent Marker', fantasy; 
+	font-size: 2cm;
+	text-shadow: 8px 8px 8px #00FA9A;
+	margin-left: 5cm
+	}
+	</style>
+	<script>
+	alert('Record your measurements in hours, minutes, and seconds format')
+	var hrs = prompt('How many hours?', 'Enter')
+	var min = prompt(hrs + ' hours and how many minutes?', 'Enter')
+	var sec = prompt(hrs + ' hours, ' + min + ' minutes and how many seconds?', 'Enter')
+	var ans_sec = ((hrs * 3600) + (min * 60) + sec) / 10
+	var ans_min = ans_sec / 60
+	var ans_hrs = ans_sec / 3600
+	alert(hrs + ' hrs, ' + min + ' mins, ' + sec + ' seconds =\n' + ans_hrs + ' hours,\n' + ans_min + ' minutes,\n' + ans_sec + ' seconds.')
+	</script>
+	<h1>Done! Go Back</h1>

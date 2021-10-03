@@ -1,0 +1,36 @@
+@font-face {
+	font-family: cambria;
+	src: url("fonts/cambria.ttc");
+}
+@font-face {
+	font-family: bubble;
+	src: url("fonts/ARDELANEY.ttf");
+}
+@font-face {
+	font-family: elephant;
+	src: url("fonts/ELEPHNT.TTF");
+}
+@font-face {
+	font-family: elephant;
+	src: url("fonts/KUNSTLER.TTF");
+}
+@font-face {
+	font-family: gamer;
+	src: url("fonts/pkmndp.ttf");
+}
+html {
+	background-color: lightBlue;
+	text-align: center;
+	font-family: sans-serif;
+}
+body {
+	margin: 15% 0 auto 0;
+	background-color: lightGreen;
+	color: darkBlue;
+	border: 2px solid darkGreen;
+	border-style: double none;
+	width: 100%;
+}
+.questionFrame {
+	margin: 0 auto 50px auto;
+}

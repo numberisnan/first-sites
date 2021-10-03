@@ -1,0 +1,139 @@
+html {
+	background-color: lightGreen;
+	font-family: sans-serif;
+	color: purple;
+	text-align: center;
+}
+::selection {
+	color: lightGreen;
+	background-color: hotPink;
+}
+#smiley {
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	width: 3cm;
+	height: 3cm;
+	border-radius: 1.5cm;
+	background-color: yellow;
+	text-align: center;
+	font-size: 1.4cm;
+	color: black;
+	padding-bottom: 0.5cm;
+	transition: background-color 0.5s ease-in, color 0.5s ease-out;
+}
+#smiley:hover {
+	background-color: red;
+}
+.output {
+	padding: 3px;
+	width: 15cm;
+	text-align: center;
+	border-radius: 8px;
+	margin: 0.5cm auto 2cm auto;
+}
+button {
+	border-radius: 10px;
+	font-family: impact;
+	font-size: 0.8cm;
+	margin: 0.3cm;
+	color: navy;
+	width: 3cm;
+	height: 1cm;
+	border: navy 2px solid;
+	background-color: lightBlue;
+	transition: border-color 0.2s, color 0.2s, background-color 0.2s ease-out 0.1s;
+}
+button:hover {
+	color: lightBlue;
+	background-color: navy;
+}
+button:active {
+	background-color: red;
+	color: orange;
+	border-color: red;
+}
+input {
+	border: none;
+	border-radius: 5px;
+	font: 20px none sans-serif;
+	color: blue;
+	background-color: orange;
+	padding-left: 10px;
+	transition: background-color 0.1s 0.1s, font-size 0.3s ease-out, color 0.2s ease-in, width 0.2s, border-width 0.2s;
+	width: 4cm;
+	border: 0px red solid;
+}
+input:focus {
+	color: red;
+	background-color: lightBlue;
+	font-size: 25px;
+	width: 5cm;
+	border-width: 2px;
+}
+h1 {
+	color: indigo;
+	margin-bottom: 1.5cm;
+	text-decoration: underline;
+}
+.wideInput {
+	width: 7cm;
+}
+.wideInput:focus {
+	width: 9cm;
+}
+.subnote {
+	color: navy;
+	font-size: 16px;
+	margin-top: 0;
+	padding-top: 5px;
+}
+h2 {
+	margin-bottom: 5px;
+}
+.designLine {
+	position: fixed;
+	background-color: navy;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 4%;
+	transition: width 0.5s ease-in;
+}
+.designLine:hover, #topL:hover {
+	width: 6%;
+}
+.designLine img {
+	width: 100%;
+	position: relative;
+	z-index: 2;
+}
+#topL {
+	background-color: hotPink;
+	width: inherit;
+	opacity: 0;
+}
+@keyframes popup {
+0% {top: -15%; opacity: 0; left: 39%; right: 39%;}
+20% {top: 3%; opacity: 0.9; left: 35%; right: 35%;}
+80% {top: 3%; opacity: 0.9; left: 35%; right: 35%;}
+100%{top: -15%; opacity: 0; left: 39%; right: 39%;}
+}
+#countDisplay {
+	padding: 10px;
+	border: hotPink double 4px;
+	position: fixed; 
+	border-radius: 8px;
+	background-color: pink;
+	right: 30%;
+	left: 30%;
+	top: -20%;
+	opacity: 0;
+	animation-name: popup;
+	animation-duration: 6s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 1s;
+}
+#logo {
+	opacity: 1;
+}

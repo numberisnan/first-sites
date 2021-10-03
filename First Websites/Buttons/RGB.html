@@ -1,0 +1,24 @@
+<style>
+#output {
+width: 3cm;
+height: 3cm;
+margin-top: 1cm; 
+}
+</style>
+<h1>RGB color maker</h1><br>
+Red: <input id="Red" type="range" oninput="Color()" min="0" max="255"> <p id="r"></p><br>
+Green: <input id="Gre" type="range" oninput="Color()" min="0" max="255"> <p id="g"></p><br>
+Blue: <input id="Blu" type="range" oninput="Color()" min="0" max="255"> <p id="b"></p><br>
+<div id="output"></div>
+<script>
+function Color() {
+var R = Red.value;
+var G = Gre.value;
+var B = Blu.value;
+output.style.backgroundColor = "rgb(" + R + "," + G + "," + B + ")";
+
+document.getElementById("r").innerHTML = R;
+document.getElementById("g").innerHTML = G;
+document.getElementById("b").innerHTML = B;
+}
+</script>

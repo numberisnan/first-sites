@@ -1,0 +1,23 @@
+@font-face {
+	font-family: cambria;
+	src: url("Fonts/cambria.ttc");
+}
+@font-face {
+	font-family: bubble;
+	src: url("Fonts/ARDELANEY.ttf");
+}
+@font-face {
+	font-family: elephant;
+	src: url("Fonts/ELEPHNT.TTF");
+}
+@font-face {
+	font-family: elephant;
+	src: url("Fonts/KUNSTLER.TTF");
+}
+@font-face {
+	font-family: gamer;
+	src: url("Fonts/pkmndp.ttf");
+}
+html {
+	
+}

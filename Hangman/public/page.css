@@ -1,0 +1,83 @@
+/* Coolors Exported Palette - coolors.co/ccf1ff-42a6be-b3d9d8-95b1d8-75a9d8 */
+/* RGB */
+@import url("https://fonts.googleapis.com/css?family=Flamenco|Roboto:300");
+html {
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  background-color: #ccf1ff;
+  text-align: center;
+}
+
+input,
+button,
+p,
+footer {
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  color: #203133;
+}
+
+p {
+  color: rgba(32, 49, 51, 0.8);
+}
+
+input, button {
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+input {
+  border: solid 3px black;
+  transition: border-color 0.75s;
+}
+
+button {
+  background-color: #f7c353;
+  color: white;
+  border: none;
+}
+
+input:focus {
+  border-color: #f7c353;
+}
+
+.introFrame h1 {
+  font: 500% "Flamenco", cursive;
+  margin: 15% auto 0 auto;
+}
+.introFrame p {
+  margin-top: 2%;
+  font: 100% "Roboto", sans-serif;
+}
+.introFrame input {
+  font-size: 300%;
+}
+.introFrame button {
+  margin-left: 1%;
+  font-size: 150%;
+}
+.introFrame footer {
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90%;
+  z-index: -1;
+  background-image: url("graphics/clouds.png");
+  background-size: cover;
+}
+.introFrame footer p {
+  position: fixed;
+  top: auto;
+  bottom: 2%;
+  left: 0;
+  right: 0;
+}
+
+/*# sourceMappingURL=page.css.map */

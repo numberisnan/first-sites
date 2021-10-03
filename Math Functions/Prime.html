@@ -1,0 +1,59 @@
+<!Doctype html>
+<div id="result" style="width: 10cm;"></div>
+
+<script>
+var primes, primeP;
+
+function calc() {
+	result.innerHTML = "";
+	primes = [2];
+	primeP = [0.5]
+	var lim = Number(prompt("Calculate prime numbers until what?", "Enter"));
+	function insert(n) {
+		primes.push(n);
+		primeP.push(primes.length/n);
+	}
+	
+	return new Promise( function(resolve,reject) {
+		(function loop(n) {
+			(isPrime(n) ? insert : () => void 0)(n);
+			setTimeout(n < lim - 2 ? () => loop(n + 2) : resolve, 10, {primes, primeP});
+		} )(3)
+	} )
+	
+}
+
+function isPrime(a) {
+	for (var i = 0; i <= primes.length - 1; ++i) {
+	
+		if (a%primes[i] === 0) {
+			return false;
+		}
+		
+	}
+	
+	return true;
+}
+
+async function prime() {
+	var calculation = await calc();
+	result.innerHTML = calculation.primes.join("<br>");
+}
+
+prime();
+/* Helpful to run in command line to obtain where the greatest distance between two prime numbers is located
+var dif = {
+	difference: 0,
+};
+for (var i = 0; i <= primes.length - 1; i++) {
+	if (primes[i+1] - primes[i] >= dif.difference) {
+		dif = {
+			difference: primes[i+1] - primes[i],
+			placement: i,
+			value: primes[i] + " " + primes[i+1]
+		};
+	}
+}
+console.log(dif);
+*/
+</script>

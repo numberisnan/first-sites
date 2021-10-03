@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style>
+			html {
+				background-color: rgb(249,238,150);
+			}
+			
+			iframe {
+				width: 100%;
+				height: 95%;
+				border: solid 3px brown;
+			}
+		</style>
+
+	</head>
+	<body>
+		<iframe src="./theHateUGive_files/part0004.html" id="iframe"></iframe>
+		<script>
+			var section = Number(localStorage.getItem("section")) || 4;
+			
+			function sectionStringfromNumber(n) { //Changes section number to string
+				return (n >= 10) ? String(n) : "0" + String(n);
+			}
+			
+			iframe.src = "./theHateUGive_files/part00" + sectionStringfromNumber(section) + ".html";
+			
+			function keydownhandler(e) {
+				
+				switch (e.keyCode) {
+					case 37:
+						section -= (section == 4) ? 0 : 1;
+						localStorage.setItem("section", section);
+						iframe.src = "./theHateUGive_files/part00" + sectionStringfromNumber(section) + ".html";
+						break;
+					case 39:
+						section += (section == 35) ? 0 : 1;
+						localStorage.setItem("section", section);
+						iframe.src = "./theHateUGive_files/part00" + sectionStringfromNumber(section) + ".html";
+						break;
+				}
+				
+			}
+			
+			document.addEventListener("keydown", keydownhandler);
+		</script>
+	</body>
+</html>

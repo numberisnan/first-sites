@@ -1,0 +1,5 @@
+- Add launch page with settings
+- Make tank sounds more realistic
+- Fix explosion animation (for multiple)
+- Update collision function
+

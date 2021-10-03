@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="monopoly.css">
+<title>Monopoly Player</title>
+<body id="body">
+<header>WARNING: CLOSING WINDOW WILL REMOVE ALL DATA!</header>
+<h1 onclick="Bro()">MONOPOLY BROS!!</h1>
+<script>
+function Bro() {
+alert("Ya boooooy!");
+}
+</script>
+<p>Use this thing to play monopoly if you lost all of your cards, money, and paper!</p>
+<h2>Balances</h2>
+<div id="players">
+<p id="p1">P1</p><p id="m1">15000</p><button onclick="Cp1()">Change</button><br>
+<p id="p2">P2</p><p id="m2">15000</p><button onclick="Cp2()">Change</button><br>
+<p id="p3">P3</p><p id="m3">15000</p><button onclick="Cp3()">Change</button><br>
+<p id="p4">P4</p><p id="m4">15000</p><button onclick="Cp4()">Change</button><br>
+</div>
+<script type="text/javascript" src="Money.js"></script>
+<br><br>
+<div id="properties">
+<h2>Properties</h2>
+
+<div class="p" id="pp1">
+<p id="p21"></p><br>
+<script type="text/javascript" src="Add1.js">
+</script>
+<input type="text" placeholder="Add Property" id="input1">
+<button onclick="Add1()">Enter</button>
+</div>
+
+<div class="p" id="pp2">
+<p id="p22"></p><br>
+<script type="text/javascript" src="Add2.js">
+</script>
+<input type="text" placeholder="Add Property" id="input2">
+<button onclick="Add2()">Enter</button>
+</div>
+
+<div class="p" id="pp3">
+<p id="p23"></p><br>
+<script type="text/javascript" src="Add3.js">
+</script>
+<input type="text" placeholder="Add Property" id="input3">
+<button onclick="Add3()">Enter</button>
+</div>
+
+<div class="p" id="pp4">
+<p id="p24"></p><br>
+<script type="text/javascript" src="Add4.js">
+</script>
+<input type="text" placeholder="Add Property" id="input4">
+<button onclick="Add4()">Enter</button>
+</div>
+
+</div>
+<div id="cardDisplay">
+<script type="text/javascript" src="Selector.js"></script>
+<h2>Property Card View</h2>
+<select id="color" value="Choose..." oninput="Display()">
+<option>Brown</option>
+<option>Light Blue</option>
+<option>Pink</option>
+<option>Orange</option>
+<option>Red</option>
+<option>Yellow</option>
+<option>Green</option>
+<option>Blue</option>
+<option>Railroads</option>
+<option>Other</option>
+</select>
+<img src="https://geniusquotes.org/wp-content/uploads/2014/04/Cartoon-funny-Happy-Friday-quotes.jpg" id="outimg">
+<div>
+
+<div id="buttons">
+<h2>Chance and Community Chest</h2>
+<img id="Ch" title="Baha eats lots of beans" src="https://s-media-cache-ak0.pinimg.com/736x/23/3e/ff/233eff1a0bcd8812bf8ba73fd94235bc.jpg" onclick="DrawCh()">
+<img id="Cc" title="Memes are da best" src="http://www.barrowislandcommunity.com/wp-content/uploads/2014/01/community_chest_3.jpg" onclick="DrawCc()">
+</div>
+<script>
+for (var i = 1; i < 5; i++) {
+var name = prompt("What is player " + i + "'s name?", "Player " + i) + ":";
+document.getElementById("p" + i).innerHTML = name;
+document.getElementById("p2" + i).innerHTML = name;
+}
+</script>
+</body>

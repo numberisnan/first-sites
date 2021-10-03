@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Economica|Monoton');
+html {
+	text-align: center;
+	background-image: url("http://demandware.edgesuite.net/aamm_prd/on/demandware.static/Sites-JoAnn-Site/Sites-joann-product-catalog/default/dwe0ec3e49/images/hi-res/13/13155775.jpg");
+	font-size: 25px;
+	color: rgb(139,10,80);
+	font-family: 'Economica', sans-serif;
+	overflow: auto;
+}
+h1 {
+	color: rgb(139,0,0);
+	font-size: 45px;
+	font-family: 'Monoton', cursive;
+}
+body {
+	margin-top: 1cm;
+	background-color: rgba(155,205,155,0.9);
+	border: 3px double rgb(47,79,79);
+	width: 1150px;
+	display: inline-block;
+}
+#players {
+	column-count: 4;
+}
+#p1 {
+	padding-top: 0px;
+	margin-top: 0px;
+}
+#p1, #p2, #p3, #p4 {
+	margin-bottom: 10px;
+	text-decoration: underline;
+	font-family: 'Bangers', cursive;
+}
+#m1, #m2, #m3, #m4 {
+	color: rgb(47,79,79);
+	display: block;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+h2 {
+	color: rgb(139,26,26);
+	font-size: 33px;
+	font-family: 'Bangers', cursive;
+}
+.p {
+	float: left;
+	padding-right: 7%;
+	font-family: 'Bangers', cursive;
+	max-width: 20%;
+}
+#p21, #p22,#p23, #p24 {
+	text-decoration: underline;
+}
+header {
+	font-size: 25px;
+	position: fixed;
+	color: white;
+	text-decoration: italic;
+	background-color: red;
+	margin: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	padding: 15px auto;
+}
+h3, h4, h5, h6 {
+	font-size: 25px;
+	background-color: beige;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 3px;
+	overflow: auto;
+}
+img {
+	height: 300px;
+}
+#Ch {
+	margin-right: 20px;
+}

@@ -1,0 +1,34 @@
+<!Doctype html>
+<head>
+	<title>To Do List</title>
+	<link rel="stylesheet" href="todo.css">
+</head>
+
+<body>
+<div id="popup"></div>
+
+<div id="listForm" class="form">
+	<h1>Event:</h1><br>
+	<input id="newListItem"><br>
+	<button onclick="updateList()">Enter</button><br>
+	<button onclick="clearListForm()">Cancel</button>
+</div>
+
+<div class="form" id="nameForm">
+	<h1>Hey there, User. What's your name?</h1><br>
+	<input id="Name" class="underline"><br>
+	<!-- Make the name cookie already recognise name -->
+	<button onclick="addName()">Submit</button>
+</div>
+<div id="darkBackground"></div>
+	
+	<h1 id="header" onclick="resetName()" title="Click to reset name">Todo List</h1>
+	<button onclick="makeVisible(darkBackground);makeVisible(listForm);newListItem.value = ''">Add to List</button>
+	<p>Click on tasks to check them off!</p>
+	<div id="listContainer">
+	</div>
+	<img id="logo" title="Faraz N' Co." src="Images/logo.png">
+
+<script src="todo.js"></script>
+
+</body>

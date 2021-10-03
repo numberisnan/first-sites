@@ -1,0 +1,100 @@
+@import 'sass/palette.scss';
+@import url('https://fonts.googleapis.com/css?family=Flamenco|Roboto:300');
+
+@mixin user-select($p) {
+	user-select: $p;
+	-ms-user-select: $p;
+	-moz-user-select: $p;
+	-webkit-user-select: $p;
+}
+@mixin edges($t,$r,$b,$l) {
+	position: fixed;
+	top: $t;
+	bottom: $b;
+	left: $l;
+	right: $r;
+}
+
+$display: 'Flamenco', cursive;
+$text: 'Roboto', sans-serif;
+$headersize: 500%;
+$textsize: 100%; 
+
+html {
+	@include user-select(none);
+
+	background-color: $bg1;
+	text-align: center;
+}
+
+input,
+button,
+p,
+footer {
+	font-family: $text;
+}
+
+h1 {
+	color: $textcolor2;
+}
+
+p {
+	color: $textcolor1;
+}
+
+input, button {
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+}
+
+input {
+	border: solid 3px black;
+	transition: border-color 0.75s;
+}
+
+button {
+	background-color: $border;
+	color: white;
+	border: none;
+}
+
+input:focus {
+	border-color: $border;
+}
+
+.introFrame {
+	h1 {
+		font: $headersize $display;
+		margin: 15% auto 0 auto;
+	}
+
+	p {
+		margin-top: 2%;
+		font: $textsize $text;
+	}
+
+	input {
+		font-size: $textsize * 3;
+	}
+
+	button {
+		margin-left: 1%;
+		font-size: $textsize * 1.5;
+	}
+
+	footer {
+		@include edges(auto, 0, 0, 0);
+
+		height: 90%;
+		z-index: -1;
+		background-image: url("graphics/clouds.png");
+		background-size: cover;
+
+		p {
+			@include edges(auto,0,2%,0);
+		}
+	}
+}
+
+

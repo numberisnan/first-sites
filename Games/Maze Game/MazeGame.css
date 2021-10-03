@@ -1,0 +1,15 @@
+html {
+	overflow: ;
+	background-color: blue;
+}
+#player {
+	position: fixed;
+	top: 250px;
+	right: 250px;
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+input {
+	visibility: hidden;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<title>Won a Bet!</title>
+<style>
+html {
+	color: blue;
+	background-color: lightGreen;
+	margin-left: 5cm;
+	font: bold 2cm monospace;
+}
+h1 {
+	color: magenta;
+	text-shadow: 4px 4px blue;
+	font-family: impact;
+	font-style: underline;
+}
+a:hover {
+	border-width: 0.75cm;
+	border-style: dashed;
+	border-color: magenta;
+	font-family: fantasy;
+	font-size: 3cm;
+	font-style: underline;
+	color: violet
+}
+</style>
+<script>
+alert('OKAY BOSS, ITS WINNING TIME.')
+var T_overs = prompt('How many overs are in the match?')
+var overs = prompt('How many overs have been completed?')
+var min_overs = T_overs / 2
+if (overs >= min_overs) {
+	var run_rate = prompt('What is the run rate?')
+	var total_runs = T_overs * run_rate
+	alert('YES!')
+	alert('YES! \n ANSWER CONFIRMED!')
+	alert('YOUR SCORE TOTAL SCORE IS...')
+	alert(total_runs + ' runs!')
+}
+if (overs < min_overs) {
+	alert('ERROR!')
+	alert('NOT ENOUGH OVERS FOR ACCURATE RESULT!')
+}
+
+</script>
+<p>WELL? HAVE YOU GOT YOUR ANSWER? <br> GREAT, BECAUSE IF WE'RE WRONG, YOU GET ALL OF YOUR MONEY BACK,</p>
+<h1>GARUNTEED!!!!</h1><br>
+<img src="" width="600" title="Hit a SIX!!!"> 

@@ -1,0 +1,74 @@
+html {
+	background-color: hotPink;
+	text-align: center;
+	display: block;
+	overflow: auto;
+	padding-bottom: 3cm;
+	cursor: crosshair;
+}
+h1 {
+	font-family: fantasy;
+	font-size: 1.4cm;
+	color: lightBlue;
+	text-shadow: 8px 8px 6px grey;
+}
+p, a {
+	font-family: Impact;
+	font-size: 0.75cm;
+}
+label {
+	color: lawnGreen;
+}
+#name {
+	display: block;
+}
+input:hover, select:hover {
+	box-shadow: 3px 3px 3px blue, -3px -3px 3px blue, -3px 3px 3px green, 3px -3px 3px green;
+}
+input, select {
+	font-size: 0.75cm;
+	font-family: Impact;
+	color: darkGreen;
+	border: white solid 3px;
+	transition: box-shadow 0.2s ease-in;
+}
+#questions p {
+	color: purple;
+}
+select {
+	height: 1cm;
+	width: 10cm;
+}
+option {
+	transition: background-color 0.2s ease-out, color 0.1s ease-in 0.1s;
+}
+option:hover {
+	background-color: lightGray;
+	color: red;
+}
+#name p, #title{
+	color: brown;
+}
+#red {
+	color: rgb(255,60,60);
+}
+#green {
+	color: lawnGreen;
+}
+a {
+	margin: auto;
+	font-size: 1.5cm;
+	text-decoration: none;
+	color: lawnGreen;
+}
+a:hover {
+	text-decoration: underline;
+}
+#title {
+	padding-bottom: 1.5cm;
+	margin: auto;
+	font-size: 1cm;
+}
+#answers {
+	display: none;
+}

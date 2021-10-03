@@ -1,0 +1,18 @@
+<!Doctype html>
+<canvas id="canvas1" height="400" width="400">
+<p class="error">Canvas-Supporting Browser Required</p>
+</canvas>
+<script type="text/javascript">
+var canvas = document.getElementById("canvas1");
+var context = canvas.getContext("2d");
+/* draw simple figure of red and green squares */
+context.fillStyle = "rgb(0,255,0)";
+context.fillRect(0,0,400,400);
+//Circle
+context.beginPath();
+context.fillStyle = "blue";
+context.arc(0,0,100,0,Math.PI*2,true);
+context.fill();
+context.arc(200,200,100,0,Math.PI*2,true);
+context.fill();
+</script>

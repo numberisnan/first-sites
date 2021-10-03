@@ -1,0 +1,19 @@
+<!doctype html>
+<body id="body">
+<script>
+function simulateKeyboardEvent(e,kC,object) {
+  var event = new KeyboardEvent(e, {
+    keyCode: kC,
+  });
+  var cb = object; 
+  var cancelled = !cb.dispatchEvent(event);
+  return cancelled;
+}
+
+body.onkeydown = function(e) {
+	alert(e.keyCode);
+}
+simulateKeyboardEvent('keydown',12,body);
+console.log(document)
+</script>
+</body>

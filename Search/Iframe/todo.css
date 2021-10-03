@@ -1,0 +1,118 @@
+html {
+	background-color: rgb(179,240,214);
+	font-family: sans-serif;
+	color: rgb(23,70,70);
+	font-size: 20px;
+	overflow: auto;
+}
+body {
+	border-radius: 40px;
+	width: 80%;
+	background-color: rgb(146,146,228);
+	margin: 3% auto 10px auto;
+	padding: 4% 3% 2% 3%;
+	text-align: center;
+}
+button {
+	border: 2px solid rgb(53,3,137);
+	background-color: rgb(125,72,215);
+	width: 35%;
+	font-family: impact;
+	color: rgb(23,70,70);
+	border-radius: 9px;
+	height: 1.5cm;
+	font-size: 150%;
+	overflow: hidden;
+	margin: 2%;
+	transition: background-color 0.1s ease-in 0.1s, font-size 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), color 0.2s;
+}
+button:hover {
+	background-color: rgb(53,3,137);
+	color: rgb(179,240,214);
+	font-size: 1.1cm;
+}
+.form {
+	position: fixed;
+	top: 10%;
+	left: 10%;
+	bottom: 10%;
+	right: 10%;
+	background-color: lightGreen;
+	border-radius: 15px;
+	z-index: 1;
+	border: 2px solid rgb(23,70,70);
+	overflow: auto;
+}
+#darkBackground {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: black;
+	opacity: 0.7;
+}
+#listForm {
+	display: none;
+}
+input {
+	border: none;
+	border-radius: 10px;
+	color: rgb(23,70,70);
+	width: 40%;
+	height: 1cm;
+	margin-bottom: 5%;
+	font-size: 150%;
+	padding: 2px 5px;
+	transition: width 0.3s;
+}
+input:focus {
+	width: 50%;
+}
+#listContainer {
+	margin: 3% 10%;
+	background-color: lightBlue;
+	padding: 3% 5%;
+	border: 3px solid navy;
+	border-radius: 15px;
+	overflow: auto;
+}
+#listContainer p {
+	font-size: 200%;
+}
+#listContainer img {
+	width: 50%;
+}
+#logo {
+	width: 7%;
+	border-radius: 9px;
+}
+.underline {
+	background-color: rgba(0,0,0,0);
+	border: 3px rgb(23,70,70) solid;
+	border-width: 0 0 3px 0 !important;
+	border-radius: 0;
+	transition: border-color 0.3s ease-out, width 0.3s, color 0.4s ease-out;
+}
+@keyframes animation {
+0% {top: -15%; opacity: 0; left: 33%; right: 33%;}
+20% {top: 5%; opacity: 0.8; left: 28%; right: 28%;}
+80% {top: 5%; opacity: 0.8; left: 28%; right: 28%;}
+100%{top: -15%; opacity: 0; left: 33%; right: 33%;}
+}
+#popup {
+	padding: 1%;
+	border: rgb(23,70,70) solid 2px;
+	position: fixed; 
+	border-radius: 8px;
+	background-color: rgb(179,240,214);
+	right: 20%;
+	left: 20%;
+	top: -20%;
+	opacity: 0;
+	z-index: 2;
+	animation-name: animation;
+	animation-duration: 6s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 2s;
+}

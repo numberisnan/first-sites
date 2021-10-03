@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Gamepad API buttons test page</title>
+
+    <link rel="stylesheet" href="">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style>
+      .ball {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: red;
+
+        background-image: -webkit-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: -moz-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: -ms-radial-gradient(40% 40%, circle, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));;
+        background-image: radial-gradient(circle at 40% 40%, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4));
+
+        position: relative;
+      }
+	  #ball1 {
+		background-color: red;
+	  }
+	  #ball2 {
+		background-color: blue;
+	  }
+	  #container {
+		position: fixed;
+		width: 400px;
+		height: 400px;
+		top: 10px;
+		left: 10px;
+		background-color: rgba(0,256,0,0.7);
+		border-radius: 200px;
+	  }
+	  #gamepad-info {
+		margin-top: 430px;
+	  }
+    </style>
+  </head>
+
+  <body>
+    <p id="gamepad-info">Waiting for Gamepad.</p>
+	<div id="container">
+		<div class="ball" id="ball1"></div>
+		<div class="ball" id="ball2"></div>
+	</div>
+
+  </body>
+
+<script>
+
+var gamepadInfo = document.getElementById("gamepad-info");
+var start;
+
+ball1.style.left = "180px";
+ball1.style.top = "180px";
+ball2.style.left = "180px";
+ball2.style.top = "180px";
+
+var rAF = window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.requestAnimationFrame;
+
+var rAFStop = window.mozCancelRequestAnimationFrame ||
+  window.webkitCancelRequestAnimationFrame ||
+  window.cancelRequestAnimationFrame;
+
+window.addEventListener("gamepadconnected", function() {
+  var gp = navigator.getGamepads()[0];
+  gamepadInfo.innerHTML = "Gamepad connected at index " + gp.index + ": " + gp.id + ". It has " + gp.buttons.length + " buttons and " + gp.axes.length + " axes.";
+
+  setInterval(function() { gameLoop() }, 50);
+});
+
+window.addEventListener("gamepaddisconnected", function() {
+  gamepadInfo.innerHTML = "Waiting for gamepad.";
+
+  rAFStop(start);
+});
+
+if(!('GamepadEvent' in window)) {
+  // No gamepad events available, poll instead.
+  var interval = setInterval(pollGamepads, 500);
+}
+
+function pollGamepads() {
+  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads : []);
+  for (var i = 0; i < gamepads.length; i++) {
+    var gp = gamepads[i];
+    if(gp) {
+      gamepadInfo.innerHTML = "Gamepad connected at index " + gp.index + ": " + gp.id + ". It has " + gp.buttons.length + " buttons and " + gp.axes.length + " axes.";
+      gameLoop();
+      clearInterval(interval);
+    }
+  }
+}
+
+function buttonPressed(b) {
+  if (typeof(b) == "object") {
+    return b.pressed;
+  }
+  return b == 1.0;
+}
+
+function gameLoop() {
+  var gamepads = navigator.getGamepads ? navigator.getGamepads() : (navigator.webkitGetGamepads ? navigator.webkitGetGamepads : []);
+  if (!gamepads)
+    return;
+
+  var gp = gamepads[0];
+  ball1.style.left = (200 + (gp.axes[0] * 200) - 20) + "px";
+  ball1.style.top = (200 + (gp.axes[1] * 200) - 20) + "px";
+  ball2.style.left = (200 + (gp.axes[2] * 200) - 20) + "px";
+  ball2.style.top = (200 + (gp.axes[3] * 200) - 60) + "px";
+};
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<title>Probability Simulator!</title>
+<link href='https://fonts.googleapis.com/css?family=Freckle+Face|Chelsea+Market' rel='stylesheet' type='text/css'>
+<style>
+html {
+	color: #8B7D6B;
+	background-color: #FFEECA;
+	font: normal 1cm 'Freckle Face', impact;
+	text-shadow: 4px 4px #EED5B7;
+	margin-left: 5cm;
+}
+h1 {
+	color: #DAA520;
+	font-family: 'Chelsea Market', monospace;
+}
+a {
+	font-size: 2cm;
+}
+a:hover {
+	border-color: #8B6914;
+	border-style: dashed;
+	border-width: 6px;
+	color: #FFD700;
+}
+</style>
+<h1>Coin Flip Selected!</h1>
+<button onclick="Flip()">FILP!</button>
+<p>Flip results:</p>
+<p id="results">RESULTS</p>
+<img id="image" src="http://4.bp.blogspot.com/-XYg-7n3jguQ/T73fforiR6I/AAAAAAAAAjA/oeQPY22tDNs/s1600/Happy_smiley_face.png" width="200" length="200">
+<script>
+function Flip() {
+	var flip_raw = Math.round(Math.random())
+	if (flip_raw == 1) {
+		document.getElementById("results").innerHTML = "Heads";
+		document.getElementById("image").src = "http://www.coingalaxy.com/coininfo/two-headed.jpg";
+	}
+	if (flip_raw == 0) {
+		document.getElementById("results").innerHTML = "Tails";
+		document.getElementById("image").src = "http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg";
+	}
+}
+</script>

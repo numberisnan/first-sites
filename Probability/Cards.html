@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<title>Probability Simulator!</title>
+<link href='https://fonts.googleapis.com/css?family=Freckle+Face|Chelsea+Market' rel='stylesheet' type='text/css'>
+<style>
+html {
+	color: #8B7D6B;
+	background-color: #FFEECA;
+	font: normal 1cm 'Freckle Face', impact;
+	text-shadow: 4px 4px #EED5B7;
+	margin-left: 5cm;
+}
+h1 {
+	color: #DAA520;
+	font-family: 'Chelsea Market', monospace;
+}
+a {
+	font-size: 2cm;
+}
+a:hover {
+	border-color: #8B6914;
+	border-style: dashed;
+	border-width: 6px;
+	color: #FFD700;
+}
+</style>
+<h1>Card Deck Simulator Selected!</h1>
+<p>Results:</p>
+<button onclick="Choose()">DRAW!</button>
+<p id="Group">TBA</p>of  
+<p id="Class">TBA</p>
+<img width="500" src="https://upload.wikimedia.org/wikipedia/commons/0/02/Piatnikcards.jpg">
+<script>
+function Choose() {
+	var type = Math.floor(Math.random() * 13 + 1)
+	var suite = Math.floor(Math.random() * 4 + 1)
+	if (type == 11) {
+		type = "Jack"
+	}
+	if (type == 12) {
+		type = "King"
+	}
+	if (type == 13) {
+		type = "Queen"
+	}
+	if (type == 1) {
+		type = "Ace"
+	}
+	if (suite == 1) {
+		suite = "Hearts"
+	}
+	if (suite == 2) {
+		suite = "Spades"
+	}
+	if (suite == 3) {
+		suite = "Diamonds"
+	}
+	if (suite == 4) {
+		suite = "Clubs"
+	}
+	document.getElementById("Group").innerHTML = type ;
+	document.getElementById("Class").innerHTML = suite ;
+}
+</script>

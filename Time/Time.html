@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<title>Your Current Time</title>
+<style>
+html {
+	background-image: -ms-linear-gradient(left, rgb(101,239,156), rgb(41,214,209));
+	background-image: linear-gradient(to right, rgb(101,239,156), rgb(41,214,209));
+}
+p {
+	text-decoration: none;
+	text-align: center; 
+	font-family: sans-serif; 
+	color: rgb(100,100,100); 
+	font-size: 2.45cm; 
+	margin: 4.5cm 0 2cm 0; 
+	border-style: double; 
+	border-color: darkGreen; 
+	border-width: 6px 0 6px 0; 
+	-ms-user-select: none; 
+	cursor: none;
+}
+</style>
+<p id="time">Loading...</p>
+<noscript>This won't work if your browser cannot support Javascript</noscript>
+<script>
+setInterval(function() {
+var currentdate = new Date();
+var clockH = currentdate.getHours();
+var clockM = currentdate.getMinutes();
+var clockS = currentdate.getSeconds();
+var ampm = "";
+if (clockH > 12) {
+	clockH = clockH - 12;
+	ampm = "PM";
+} else {
+	ampm = "AM"
+}
+if (clockS < 10) {
+	clockS = "0" + clockS
+}
+var clock = String(clockH + ":" + clockM + ":" + clockS + " " + ampm);
+document.getElementById("time").innerHTML = clock;
+} , 1000) 
+</script>

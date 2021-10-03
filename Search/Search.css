@@ -1,0 +1,36 @@
+html {
+text-align: center;
+background-color: rgb(153,217,234);
+/* Background-color is defined by theme */
+}
+input {
+	margin: 150px auto 50px auto;
+	font-size: 1.7cm;
+	/* Font-family from Google Fonts*/
+	border-radius: 7px;
+	border: 0 solid blue;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	width: 20cm;
+	transition: width 0.5s ease-out, border-width 0.3s ease-in, background-color 0.2s ease-in 0.1s, color 0.3s;
+	/* Color, Border Color, Background-color defined by theme */
+}
+input:hover {
+	width: 23cm;
+	border-width: 3px;
+	/* Color, Border Color, Background-color defined by theme */
+}
+#toDoContainer {
+	border-radius: 8px;
+	background-color: blue;
+	height: 600px;
+	/* Background color defined by theme */
+}
+.button {
+	cursor: pointer;
+	height: 50px;
+}
+iframe {
+	width: 90%;
+	height: 100%;
+}

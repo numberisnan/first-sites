@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<title>Letter Game!</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="TypingGame.css">
+<script src="CookieFunctions.js"></script>
+
+<audio id="gameplay">
+	<source src="Audio/Mario.mp3">
+</audio>
+
+<audio id="correct">
+	<source src="Audio/Correct.mp3">
+</audio>
+
+<audio id="lose">
+	<source src="Audio/Lose.mp3">
+</audio>
+
+<audio id="win">
+	<source src="Audio/Win.mp3">
+</audio>
+
+<audio id="incorrect">
+	<source src="Audio/Incorrect.mp3">
+</audio>
+
+<img id="background" src="Images/Background.png">
+
+<div id="blinds">
+	<div id="instructions">How to play: Press the button on your keyboard that matches the letter on the screen.<br><br>
+		<button onclick="blinds.style.display = 'none';">OK, let me play already!</button><br>
+		<img src="Images/logo.png">
+	</div>
+</div>
+
+<div id="container">
+	<div id="sco">Score</div>
+	<div id="hsco" onclick="DeleteCookie('highScore');ShowHS();">HS</div>
+	<label id="gameArea">
+		<div id="gameFrame">Error!
+	</div>
+	</label>
+	<div id="timer" onclick="stop()">Enable Javascript</div>
+</div>
+
+<script src="TypingGame.js"></script>
+<script>
+ResetGame();
+
+function ShowHS() { 
+	if (GetCookie("highScore") == "undefined" || Number(GetCookie("highScore")) == 0) {
+		hsco.innerHTML = "Highscore: " +  0;
+		SetCookie("highScore","0",10000);
+	} else {
+		hsco.innerHTML = "Highscore: " + GetCookie("highScore") + ", click to reset";
+	}
+}
+
+ShowHS();
+</script>

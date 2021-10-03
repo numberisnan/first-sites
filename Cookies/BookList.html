@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<title>Book List App</title>
+<script type="text/javascript" src="CookieFunctions.js"></script>
+<script>
+!localStorage && (l = location, p = l.pathname.replace(/(^..)(:)/, "$1$$"), (l.href = l.protocol + "//127.0.0.1" + p));
+
+function ChangeCookie(number) {
+var ans_type = false;
+while (ans_type == false) {
+var ans = prompt("Enter Book " + number + " :", "Here")
+if (ans == "Here") {
+ans_type = true;
+} else if (ans == null) {
+alert("Not Valid book name!");
+} else {
+document.cookie = "book" + number + "=" + ans + ";expires=Thu, 28 May 2020 21:07:33 GMT;path=/;";
+ans_type = true;
+DisplayCookie(number);
+}}}
+
+function DisplayCookie(number) {
+var cook = ((document.cookie.replace(/=/g, "#")).replace(/;/g, "#")).split("#");
+if (cook.indexOf("book" + number) == 0) {
+document.getElementById("out" + number).innerHTML = cook[cook.indexOf("book" + number) + 1];
+} else {
+if (cook.indexOf(" book" + number) != -1) {
+document.getElementById("out" + number).innerHTML = cook[cook.indexOf(" book" + number) + 1];
+} else {
+document.getElementById("out" + number).innerHTML = "Press Change";
+}}}
+</script>
+
+<style>
+html {
+font-size: 0.5cm;
+background-color: lightBlue;
+text-align: center;
+}
+.button {
+background-color: lightGreen;
+transition: background-color 0.2s ease-in, color 0.4s ease-out, width 0.3s ease-out, border-radius 0.3s ease-in, border-color 0.3s ease-out, padding 0.2s ease-in;
+width: 2cm;
+text-align: center;
+padding: 5px;
+color: darkGreen;
+border-radius: 7px;
+border: 3px solid darkGreen;
+}
+.button:hover {
+background-color: orange;
+width: 3.5cm;
+color: red;
+border-radius: 1cm;
+padding: 10px 7px;
+border-color: red; 
+}
+p {
+font-family: fantasy;
+background-color: lawnGreen;
+font-size: 0.7cm;
+text-align: center;
+color: red;
+max-width: 10cm;
+overflow: auto;
+border-radius: 1cm;
+-ms-user-select: none;
+padding: 15px 5px 0 5px;
+border: 2px solid green;
+transition: border-radius 0.3s, border-color 0.2s, font-size 0.2s ease-in, border-width 0.2s ease-out, max-width 0.2s ease-out, color 0.3s ease-in, background-color 0.2s ease-out 0.1s;
+}
+p:hover {
+border-radius: 15px;
+border-width: 3px;
+font-size: 1cm;
+border-color: darkBlue;
+max-width: 15cm;
+color: darkBlue;
+background-color: orange;
+}
+h1, .button, footer {
+font-family: sans-serif;
+}
+h1 {
+transition: color 0.5s;
+}
+footer {
+bottom: 0;
+right: 0;
+left: 0;
+height: 0.6cm;
+background-color: darkBlue;
+color: white;
+position: fixed;
+text-align: center;
+transition: color 0.2s ease-in, background-color 0.1s ease-out 0.1s;
+}
+body {
+margin-bottom: 3cm;
+}
+footer:hover {
+color: darkBlue;
+background-color: lightGreen;
+}
+</style>
+
+<h1 onmouseover="this.style.color='blue'" onmouseout="this.style.color='black'" id="nameout">What books do you want to read?</h1>
+<p id="out1">Enable JavaScript</p><div onclick="ChangeCookie(1)" class="button">Change</div>
+<p id="out2">Enable JavaScript</p><div onclick="ChangeCookie(2)" class="button">Change</div>
+<p id="out3">Enable JavaScript</p><div onclick="ChangeCookie(3)" class="button">Change</div>
+<p id="out4">Enable JavaScript</p><div onclick="ChangeCookie(4)" class="button">Change</div><br>
+<div class="button" onclick="DeleteCookie('book1');DisplayCookie('1');DeleteCookie('book2');DisplayCookie('2');DeleteCookie('book3');DisplayCookie('3');DeleteCookie('book4');DisplayCookie('4');">CLEAR</div>
+<footer>Made by Faraz and Co.</footer>
+
+<script>
+DisplayCookie(1);
+DisplayCookie(2);
+DisplayCookie(3);
+DisplayCookie(4);
+
+if (GetCookie("name") == "undefined") {
+var ans = prompt("What is your name?","Name");
+SetCookie("name",ans,1000);
+nameout.innerHTML = "What books do you want to read, " + GetCookie("name") + "?";
+} else {
+nameout.innerHTML = "What books do you want to read, " + GetCookie("name") + "?";
+}
+</script>
